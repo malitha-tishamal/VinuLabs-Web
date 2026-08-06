@@ -1,33 +1,47 @@
-# VinuLabs website — Vercel-ready source
+# Venus Free Next.js Website Template
 
-This is the complete source for the VinuLabs consultancy website. It is a standard Next.js project and includes the logo and the best-resolution profile images available in the current site.
+#### Preview
 
-## Deploy on Vercel
+- [Demo](https://themewagon.github.io/venus-nextjs/)
 
-1. Extract this ZIP file.
-2. Upload the extracted folder to a new GitHub repository.
-3. In Vercel, select **Add New → Project** and import that repository.
-4. Keep the detected framework as **Next.js**.
-5. Select **Deploy**. No environment variables are required.
+#### Download
 
-## Run locally
+- [Download from ThemeWagon](https://themewagon.com/themes/venus-nextjs/)
 
-Install Node.js 20.9 or newer, then run:
+## Getting Started
 
-```bash
-npm install
-npm run dev
+1. Clone Repository
+
+```
+git clone https://github.com/themewagon/venus-nextjs.git
 ```
 
-Open `http://localhost:3000`.
+2. Install Dependencies
 
-## Main files
+```
+npm i
+```
 
-- `app/page.tsx` — website content and page structure
-- `app/globals.css` — complete responsive design
-- `app/layout.tsx` — page metadata and favicon
-- `public/` — VinuLabs logo and profile images
+3. Run the development server:
 
-## Update contact links
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-The current call-to-action buttons open the VinuLabs LinkedIn page. Search for `linkedin.com/company/vinulab` in `app/page.tsx` to replace it with an email address, WhatsApp link or contact page later.
+## Author
+
+```
+Design and code is completely written by Getnextjstemplates and development team.
+```
+
+## License
+
+- Design and Code is Copyright &copy; [codescandy](https://getnextjstemplates.com/)
+- Licensed cover under [MIT]
+- Distributed by [ThemeWagon](https://themewagon.com)

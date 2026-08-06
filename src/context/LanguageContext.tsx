@@ -41,7 +41,7 @@ const dictionaries: Record<Language, Translations> = {
     navCaseStudies: "Case Studies",
     navTeam: "Team",
     navContact: "Contact",
-    navAdmin: "Admin CMS",
+    navAdmin: "Admin",
     heroTagline: "AI · Cloud · Architecture · Capability",
     heroTitleLine1: "Smart strategy.",
     heroTitleLine2: "Systems that scale.",

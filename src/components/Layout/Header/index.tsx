@@ -71,8 +71,8 @@ const Header: React.FC = () => {
             <HeaderLink key={index} item={item} />
           ))}
           <Link
-            href="/admin"
-            className="text-xs font-semibold px-3 py-1.5 rounded-full border border-cyan-500/40 text-cyan-500 dark:text-cyan-400 hover:bg-cyan-500/10 transition-colors"
+            href="/admin/login"
+            className="text-xs font-semibold px-3.5 py-1.5 rounded-full border border-cyan-500/40 text-cyan-500 dark:text-cyan-400 hover:bg-cyan-500/10 transition-colors"
           >
             {t.navAdmin}
           </Link>
@@ -153,7 +153,7 @@ const Header: React.FC = () => {
             <MobileHeaderLink key={index} item={item} />
           ))}
           <Link
-            href="/admin"
+            href="/admin/login"
             onClick={() => setNavbarOpen(false)}
             className="w-full text-center mt-4 py-2 px-4 rounded-lg bg-cyan-600 text-white font-semibold text-sm hover:bg-cyan-500"
           >

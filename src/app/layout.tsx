@@ -80,6 +80,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: baseUrl,
   },
+  icons: {
+    icon: '/images/logo/icon.svg',
+    shortcut: '/images/logo/icon.svg',
+    apple: '/images/logo/icon.svg',
+  },
 };
 
 export default function RootLayout({
@@ -91,6 +96,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="canonical" href={baseUrl} />
+        <link rel="icon" href="/images/logo/icon.svg" type="image/svg+xml" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>

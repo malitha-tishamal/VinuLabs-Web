@@ -216,9 +216,13 @@ const Hero = () => {
                 height={40}
                 className='inline-block h-10 w-10 rounded-full ring-2 ring-white dark:ring-slate-900 object-cover'
               />
-              <div className='inline-flex h-10 w-10 items-center justify-center rounded-full ring-2 ring-white dark:ring-slate-900 bg-slate-800 text-cyan-400 font-mono font-bold text-xs'>
-                SV
-              </div>
+              <Image
+                src={getImgPath('/Dr.Sugandima.jpeg')}
+                alt='Dr. Sugandima Vidanagamachchi'
+                width={40}
+                height={40}
+                className='inline-block h-10 w-10 rounded-full ring-2 ring-white dark:ring-slate-900 object-cover'
+              />
             </div>
             <div>
               <p className='text-xs text-slate-500 dark:text-slate-400 font-medium'>

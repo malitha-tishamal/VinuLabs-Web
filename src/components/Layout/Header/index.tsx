@@ -70,15 +70,17 @@ const Header: React.FC = () => {
           {headerData.map((item, index) => (
             <HeaderLink key={index} item={item} />
           ))}
-          <Link
-            href="/admin/login"
-            className="text-xs font-semibold px-3.5 py-1.5 rounded-full border border-cyan-500/40 text-cyan-500 dark:text-cyan-400 hover:bg-cyan-500/10 transition-colors"
-          >
-            {t.navAdmin}
-          </Link>
         </nav>
 
         <div className='flex items-center gap-3'>
+          {/* Admin Link – right-aligned */}
+          <Link
+            href="/admin/login"
+            className="hidden lg:inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-2 rounded-full border border-cyan-500/40 text-cyan-500 dark:text-cyan-400 hover:bg-cyan-500/10 transition-colors"
+          >
+            <svg viewBox="0 0 16 16" fill="currentColor" className="w-3.5 h-3.5"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zm0 2c-3.866 0-7 1.79-7 4v.5h14V14c0-2.21-3.134-4-7-4z"/></svg>
+            {t.navAdmin}
+          </Link>
           {/* Language Selector */}
           <select
             value={language}

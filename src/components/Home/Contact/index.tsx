@@ -78,7 +78,7 @@ const Contactform = () => {
                 <span className='text-xl'>✉</span>
                 <div>
                   <span className='text-xs text-slate-500 uppercase font-mono block mb-1'>Email Us</span>
-                  <span className='text-white text-sm font-medium'>hello@vinulabs.com</span>
+                  <span className='text-white text-sm font-medium'>hello@vinulabs.lk</span>
                 </div>
               </div>
               <div className='flex items-start gap-4 p-4 rounded-xl bg-slate-900/50 border border-slate-800'>

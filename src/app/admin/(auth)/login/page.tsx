@@ -55,26 +55,26 @@ export default function AdminLoginPage() {
 
         {/* Logo / Brand */}
         <div className="text-center mb-8">
-          <Link href="/" className="inline-flex items-center gap-2 mb-6 group">
+          <Link href="/" className="inline-flex flex-col items-center gap-2 mb-6 group">
             {/* Light mode logo */}
             <Image
               src="/images/logo/logo.svg"
               alt="VinuLabs"
-              width={160}
-              height={44}
-              style={{ width: 'auto', height: '36px' }}
+              width={200}
+              height={56}
+              style={{ width: 'auto', height: '52px' }}
               priority
-              className="dark:hidden"
+              className="dark:hidden group-hover:opacity-90 transition-opacity"
             />
             {/* Dark mode logo */}
             <Image
               src="/images/logo/logo-white.svg"
               alt="VinuLabs"
-              width={160}
-              height={44}
-              style={{ width: 'auto', height: '36px' }}
+              width={200}
+              height={56}
+              style={{ width: 'auto', height: '52px' }}
               priority
-              className="hidden dark:block"
+              className="hidden dark:block group-hover:opacity-90 transition-opacity"
             />
           </Link>
           <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">Welcome back</h1>

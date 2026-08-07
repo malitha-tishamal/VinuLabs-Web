@@ -78,7 +78,7 @@ const Contactform = () => {
                 <span className='text-xl'>✉</span>
                 <div>
                   <span className='text-xs text-slate-500 uppercase font-mono block mb-1'>Email Us</span>
-                  <span className='text-white text-sm font-medium'>hello@vinulabs.lk</span>
+                  <span className='text-white text-sm font-medium'> hello@vinulabs.lk</span>
                 </div>
               </div>
               <div className='flex items-start gap-4 p-4 rounded-xl bg-slate-900/50 border border-slate-800'>
@@ -95,7 +95,7 @@ const Contactform = () => {
                   <div className='flex gap-3 mt-1'>
                     <a href='https://www.linkedin.com/company/vinulab/' target='_blank' rel='noopener noreferrer' className='text-cyan-400 hover:text-cyan-300 text-sm font-semibold transition-colors'>LinkedIn ↗</a>
                     <a href='#' className='text-cyan-400 hover:text-cyan-300 text-sm font-semibold transition-colors'>GitHub ↗</a>
-                    <a href='#' className='text-cyan-400 hover:text-cyan-300 text-sm font-semibold transition-colors'>Facebook ↗</a>
+                    <a href='https://www.facebook.com/share/17w2QSNZj1/?mibextid=wwXIfr' className='text-cyan-400 hover:text-cyan-300 text-sm font-semibold transition-colors'>Facebook ↗</a>
                   </div>
                 </div>
               </div>

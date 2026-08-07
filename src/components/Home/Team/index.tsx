@@ -13,7 +13,7 @@ const Team = () => {
             Leadership & Vision
           </span>
           <h2 className='text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight' data-aos='fade-up' data-aos-duration='800'>
-            Our Team.
+            Our Strength.
           </h2>
           <p className='text-slate-600 dark:text-slate-400 text-base md:text-lg max-w-2xl mx-auto'>
             Three perspectives. One shared standard of technical and academic excellence.

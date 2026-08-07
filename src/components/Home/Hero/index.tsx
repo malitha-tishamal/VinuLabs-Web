@@ -4,24 +4,167 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
 
+/* ─── Orbital background diagram (matches the provided design screenshots) ─── */
+const OrbitalDiagram = () => (
+  <div className="relative w-full max-w-[520px] aspect-square select-none" aria-hidden="true">
+
+    {/* ── Dark-mode glow layer ── */}
+    <div className="absolute inset-0 rounded-full bg-gradient-radial-dark dark:opacity-100 opacity-0 transition-opacity duration-500
+      [background:radial-gradient(circle_at_60%_40%,rgba(99,102,241,0.18)_0%,transparent_65%),radial-gradient(circle_at_30%_70%,rgba(6,182,212,0.18)_0%,transparent_60%)]" />
+
+    {/* ── Light-mode glow layer ── */}
+    <div className="absolute inset-0 rounded-full opacity-100 dark:opacity-0 transition-opacity duration-500
+      [background:radial-gradient(circle_at_50%_50%,rgba(196,181,253,0.35)_0%,rgba(224,231,255,0.2)_40%,transparent_70%)]" />
+
+    {/* SVG rings + dots + labels */}
+    <svg
+      viewBox="0 0 520 520"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="absolute inset-0 w-full h-full"
+    >
+      {/* ── Concentric rings (dark) ── */}
+      {/* Outer ring – solid */}
+      <circle cx="260" cy="260" r="230"
+        className="stroke-slate-700/40 dark:stroke-slate-500/30"
+        strokeWidth="1" />
+      {/* Middle ring – dashed */}
+      <circle cx="260" cy="260" r="165"
+        className="stroke-slate-600/50 dark:stroke-slate-400/25"
+        strokeWidth="1" strokeDasharray="6 5" />
+      {/* Inner ring – solid */}
+      <circle cx="260" cy="260" r="100"
+        className="stroke-slate-500/40 dark:stroke-slate-400/20"
+        strokeWidth="1" />
+
+      {/* ── Center orb ── */}
+      {/* Dark mode center */}
+      <circle cx="260" cy="260" r="72"
+        className="fill-[#0d1117] dark:fill-[#0b0d1a] stroke-slate-700/50 dark:stroke-indigo-700/50"
+        strokeWidth="1.5" />
+      {/* Light mode center fill override */}
+      <circle cx="260" cy="260" r="72"
+        className="fill-white/90 dark:fill-transparent stroke-slate-200/80 dark:stroke-transparent"
+        strokeWidth="1.5" />
+
+      {/* ── Orbital dots – Cyan ── */}
+      {/* Top-left cyan (on middle ring) */}
+      <circle cx="140" cy="165" r="6"
+        className="fill-cyan-400 dark:fill-cyan-400"
+        filter="url(#glowCyan)" />
+      {/* Right-mid cyan (on outer ring) */}
+      <circle cx="420" cy="290" r="5.5"
+        className="fill-cyan-400 dark:fill-cyan-300"
+        filter="url(#glowCyan)" />
+      {/* Bottom-right cyan (on inner ring) */}
+      <circle cx="340" cy="342" r="5"
+        className="fill-cyan-400 dark:fill-cyan-400"
+        filter="url(#glowCyan)" />
+
+      {/* ── Orbital dots – Purple / Violet ── */}
+      {/* Center-left purple (on middle ring) */}
+      <circle cx="120" cy="290" r="5.5"
+        className="fill-violet-500 dark:fill-violet-400"
+        filter="url(#glowPurple)" />
+      {/* Top-right purple (on inner ring) */}
+      <circle cx="310" cy="162" r="5"
+        className="fill-violet-400 dark:fill-violet-400"
+        filter="url(#glowPurple)" />
+      {/* Bottom-right larger purple (on outer ring) */}
+      <circle cx="390" cy="390" r="6"
+        className="fill-violet-500 dark:fill-violet-400"
+        filter="url(#glowPurple)" />
+
+      {/* ── Glow filters ── */}
+      <defs>
+        <filter id="glowCyan" x="-100%" y="-100%" width="300%" height="300%">
+          <feGaussianBlur stdDeviation="3.5" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+        <filter id="glowPurple" x="-100%" y="-100%" width="300%" height="300%">
+          <feGaussianBlur stdDeviation="3" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+      </defs>
+    </svg>
+
+    {/* ── Center text ── */}
+    <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+      <span className="text-[10px] font-bold tracking-[0.25em] uppercase
+        text-cyan-500 dark:text-cyan-400 mb-1">
+        VINULABS
+      </span>
+      <p className="text-slate-800 dark:text-white font-bold text-xl leading-snug">
+        Ideas to<br />impact.
+      </p>
+    </div>
+
+    {/* ── Floating label pills ── */}
+    {/* Strategy – top right */}
+    <div className="absolute top-[12%] right-[6%] flex items-center gap-1.5 px-3 py-1.5
+      rounded-full border shadow-sm text-xs font-semibold
+      bg-white/90 dark:bg-slate-800/80
+      border-slate-200 dark:border-slate-700/60
+      text-slate-700 dark:text-slate-200
+      backdrop-blur-md">
+      <span className="w-2 h-2 rounded-full bg-cyan-400 shrink-0" />
+      Strategy
+    </div>
+    {/* People – left */}
+    <div className="absolute top-[38%] left-[2%] flex items-center gap-1.5 px-3 py-1.5
+      rounded-full border shadow-sm text-xs font-semibold
+      bg-white/90 dark:bg-slate-800/80
+      border-slate-200 dark:border-slate-700/60
+      text-slate-700 dark:text-slate-200
+      backdrop-blur-md">
+      <span className="w-2 h-2 rounded-full bg-violet-400 shrink-0" />
+      People
+    </div>
+    {/* Technology – bottom center-left */}
+    <div className="absolute bottom-[14%] left-[16%] flex items-center gap-1.5 px-3 py-1.5
+      rounded-full border shadow-sm text-xs font-semibold
+      bg-white/90 dark:bg-slate-800/80
+      border-slate-200 dark:border-slate-700/60
+      text-slate-700 dark:text-slate-200
+      backdrop-blur-md">
+      <span className="w-2 h-2 rounded-full bg-cyan-400 shrink-0" />
+      Technology
+    </div>
+  </div>
+)
+
 const Hero = () => {
   const { t } = useLanguage()
 
   return (
-    <section className='relative md:pt-28 pt-24 pb-16 bg-white dark:bg-[#07090e] transition-colors overflow-hidden'>
-      {/* Background ambient glowing orbs */}
-      <div className="absolute top-1/4 left-10 w-72 h-72 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none -z-0" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl pointer-events-none -z-0" />
+    <section className='relative md:pt-28 pt-24 pb-16 overflow-hidden transition-colors
+      bg-white dark:bg-[#07090e]'>
+
+      {/* ── Background ambient glows (section-level) ── */}
+      {/* Dark mode: blue glow top-left */}
+      <div className="absolute -top-20 -left-20 w-96 h-96 rounded-full pointer-events-none
+        bg-blue-900/60 dark:bg-blue-900/40 blur-[120px] opacity-0 dark:opacity-100 transition-opacity duration-500" />
+      {/* Dark mode: purple glow top-right */}
+      <div className="absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none
+        bg-purple-800/40 blur-[100px] opacity-0 dark:opacity-60 transition-opacity duration-500" />
+
+      {/* Light mode: lavender glow top-left */}
+      <div className="absolute -top-10 -left-10 w-96 h-96 rounded-full pointer-events-none
+        bg-indigo-200/60 blur-[100px] opacity-100 dark:opacity-0 transition-opacity duration-500" />
+      {/* Light mode: light blue glow right */}
+      <div className="absolute top-10 right-20 w-72 h-72 rounded-full pointer-events-none
+        bg-purple-200/50 blur-[80px] opacity-100 dark:opacity-0 transition-opacity duration-500" />
 
       <div className='container mx-auto max-w-7xl px-6 grid grid-cols-12 gap-8 items-center relative z-10'>
-        {/* Left Column: Side-Aligned Hero Content */}
+
+        {/* ── Left Column: Hero Content ── */}
         <div
           className='lg:col-span-6 col-span-12 space-y-6 flex flex-col items-start justify-center'
           data-aos='fade-right'
           data-aos-duration='800'>
-          
+
           <div className='inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 backdrop-blur-md'>
-            <span className='w-2 h-2 rounded-full bg-cyan-400 animate-pulse'></span>
+            <span className='w-2 h-2 rounded-full bg-cyan-400 animate-pulse' />
             <span className='font-semibold text-xs text-cyan-600 dark:text-cyan-300 tracking-wide uppercase'>
               {t.heroTagline}
             </span>
@@ -85,22 +228,14 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right Column: Clean Hero Image Illustration */}
+        {/* ── Right Column: Orbital Diagram ── */}
         <div
-          className="lg:col-span-6 col-span-12 flex justify-center items-center"
+          className="lg:col-span-6 col-span-12 flex justify-center items-center py-8"
           data-aos='fade-left'
           data-aos-duration='800'>
-          <div className="relative w-full max-w-lg p-2 rounded-3xl bg-slate-900/40 dark:bg-slate-900/60 border border-slate-700/40 backdrop-blur-xl shadow-2xl overflow-hidden">
-            <Image
-              src={getImgPath('/images/hero/hero-image.png')}
-              alt='VinuLabs Enterprise Technology Solutions'
-              width={500}
-              height={320}
-              priority
-              className='w-full h-auto object-cover rounded-2xl'
-            />
-          </div>
+          <OrbitalDiagram />
         </div>
+
       </div>
     </section>
   )

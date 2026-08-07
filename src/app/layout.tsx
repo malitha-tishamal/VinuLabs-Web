@@ -1,11 +1,7 @@
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/Layout/Header";
-import Footer from "@/components/Layout/Footer";
 import { Providers } from "@/app/providers";
-import ScrollToTop from '@/components/ScrollToTop';
-import Aoscompo from "@/utils/aos";
 import NextTopLoader from 'nextjs-toploader';
 
 const inter = Inter({ 
@@ -107,14 +103,7 @@ export default function RootLayout({
         </a>
         <NextTopLoader />
         <Providers>
-          <Aoscompo>
-            <Header />
-            <main id="main-content" tabIndex={-1}>
-              {children}
-            </main>
-            <Footer />
-          </Aoscompo>
-          <ScrollToTop />
+          {children}
         </Providers>
       </body>
     </html>

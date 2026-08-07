@@ -109,7 +109,7 @@ export const teamMembers = [
     },
     {
         name: 'Thamara Rangana Waidyarathne',
-        role: 'Academic & AI Strategy Lead',
+        role: 'Co-Founder & Director · Academic & AI Strategy Lead',
         expertise: 'AI Education · Training · Business Development',
         bio: 'Academic leader, consultant, and AI researcher bringing together workforce development, responsible AI adoption, and industry–education collaboration.',
         linkedin: 'https://www.linkedin.com/in/thamara-rangana-waidyarathne-74a38459/',

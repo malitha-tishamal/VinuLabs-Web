@@ -122,7 +122,7 @@ export const teamMembers = [
         expertise: 'AI/ML · Cybersecurity · Research & Innovation',
         bio: 'Computer science researcher and senior academic specialising in machine learning, deep learning, cybersecurity, bioinformatics, and accelerated computing.',
         linkedin: 'https://www.linkedin.com/in/sugandima-vidanagamachchi-75205921/',
-        image: null,
+        image: getImgPath('/Dr.Sugandima.jpeg'),
         initials: 'SV',
     },
 ];

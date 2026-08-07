@@ -53,6 +53,7 @@ const Footer: FC = () => {
             <ul className='space-y-3'>
               <li><Link href='/#approach' className='text-slate-400 text-sm hover:text-cyan-400 transition-colors'>Methodology</Link></li>
               <li><a href='https://www.linkedin.com/company/vinulab/' target='_blank' rel='noopener noreferrer' className='text-slate-400 text-sm hover:text-cyan-400 transition-colors'>LinkedIn ↗</a></li>
+              <li><a href='https://www.facebook.com/share/17w2QSNZj1/?mibextid=wwXIfr' target='_blank' rel='noopener noreferrer' className='text-slate-400 text-sm hover:text-cyan-400 transition-colors'>Facebook ↗</a></li>
             </ul>
           </div>
         </div>

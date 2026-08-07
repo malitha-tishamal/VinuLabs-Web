@@ -18,7 +18,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "VinuLabs",
-    "url": "https://vinulabs.com",
+    "url": "https://vinulabs.lk",
     "logo": "https://vinulabs.com/images/logo/logo.svg",
     "description": "Smart strategy. Systems that scale. Ideas that create impact. VinuLabs solves complex technology challenges with AI strategy, enterprise architecture, and professional training.",
     "address": {

@@ -19,6 +19,8 @@ const page = () => {
         title="About Us"
         description="VinuLabs is a Sri Lankan technology innovation company built on passion, research, and engineering excellence."
         breadcrumbLinks={breadcrumbLinks}
+        titleKey="aboutTitle"
+        descKey="aboutDesc"
       />
        <Counter isColorMode={true} />
        <AboutContent />

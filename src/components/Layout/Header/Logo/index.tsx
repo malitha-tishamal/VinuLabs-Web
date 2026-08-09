@@ -1,13 +1,16 @@
 import { getImgPath } from '@/utils/image';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Logo: React.FC = () => {
+  const { t } = useLanguage();
+  
   return (
     <Link href="/" className="flex items-center">
       <Image
         src={getImgPath("/images/logo/logo.svg")}
-        alt="VinuLabs - Strategy · Technology · Capability"
+        alt={`VinuLabs - ${t.expertiseTitle}`}
         width={160}
         height={48}
         style={{ width: 'auto', height: '36px' }}
@@ -17,7 +20,7 @@ const Logo: React.FC = () => {
       />
       <Image
         src={getImgPath("/images/logo/logo-white.svg")}
-        alt="VinuLabs - Strategy · Technology · Capability"
+        alt={`VinuLabs - ${t.expertiseTitle}`}
         width={160}
         height={48}
         style={{ width: 'auto', height: '36px' }}

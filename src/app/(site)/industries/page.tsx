@@ -17,6 +17,8 @@ const IndustriesPage = () => {
                 title="Industries We Serve"
                 description="VinuLabs delivers intelligent technology solutions across diverse industries, transforming operations and driving digital innovation."
                 breadcrumbLinks={breadcrumbLinks}
+                titleKey="industriesTitle"
+                descKey="industriesDesc"
             />
             <IndustriesList />
         </>

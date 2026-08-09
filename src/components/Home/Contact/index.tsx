@@ -1,8 +1,10 @@
 'use client'
 import React, { useState } from 'react'
 import { toast } from 'react-hot-toast'
+import { useLanguage } from '@/context/LanguageContext'
 
 const Contactform = () => {
+  const { t } = useLanguage()
   const [formData, setFormData] = useState({
     name: '', email: '', company: '', phone: '', service: 'General Inquiry', message: '',
   });
@@ -43,17 +45,17 @@ const Contactform = () => {
         {/* CTA Banner */}
         <div className='text-center max-w-3xl mx-auto mb-16 p-10 rounded-2xl bg-gradient-to-r from-cyan-950/40 to-blue-950/40 border border-cyan-800/30' data-aos='fade-up'>
           <span className='inline-block px-4 py-1.5 rounded-full text-xs font-mono font-bold tracking-widest text-cyan-400 bg-cyan-500/10 border border-cyan-500/30 uppercase mb-4'>
-            Ready for Transformation?
+            {t.contactTitle}
           </span>
           <h2 className='text-2xl md:text-4xl font-extrabold text-white tracking-tight mb-4'>
-            Have a challenge worth solving?
+            {t.contactTitle}
           </h2>
           <p className='text-slate-400 text-sm md:text-base mb-6'>
-            Let&apos;s explore what a focused strategy, the right architecture, and an enabled team could make possible.
+            {t.contactDesc}
           </p>
           <div className='flex gap-4 justify-center flex-wrap'>
             <a href='https://www.linkedin.com/company/vinulab/' target='_blank' rel='noopener noreferrer' className='px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all'>
-              Talk to VinuLabs ↗
+              {t.heroCtaSecondary}
             </a>
           </div>
         </div>
@@ -63,13 +65,13 @@ const Contactform = () => {
           <div className='space-y-8' data-aos='fade-right' data-aos-duration='800'>
             <div>
               <span className='inline-block px-4 py-1.5 rounded-full text-xs font-mono font-bold tracking-widest text-cyan-400 bg-cyan-500/10 border border-cyan-500/30 uppercase mb-4'>
-                Get In Touch
+                {t.contactTitle}
               </span>
               <h2 className='text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-tight'>
-                Let&apos;s Start a Conversation.
+                {t.contactTitle}
               </h2>
               <p className='text-slate-400 text-base mt-4 max-w-md'>
-                Reach out to discuss your AI roadmap, solution architecture, or custom workforce upskilling needs.
+                {t.contactDesc}
               </p>
             </div>
 

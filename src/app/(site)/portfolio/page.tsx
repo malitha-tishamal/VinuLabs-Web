@@ -17,6 +17,8 @@ const ProductsPage = () => {
                 title="Products"
                 description="Cutting-edge solutions built with AI, IoT, and cloud technologies to transform industries and drive digital transformation."
                 breadcrumbLinks={breadcrumbLinks}
+                titleKey="productsTitle"
+                descKey="productsDesc"
             />
             <ProductsList />
         </>

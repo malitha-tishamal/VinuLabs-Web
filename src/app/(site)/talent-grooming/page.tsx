@@ -17,6 +17,8 @@ const TalentGroomingPage = () => {
                 title="Talent Grooming Initiative"
                 description="VinuLabs invests heavily in grooming the next generation of tech innovators. Join our programs and become part of the future of technology."
                 breadcrumbLinks={breadcrumbLinks}
+                titleKey="talentTitle"
+                descKey="talentDesc"
             />
             <TalentContent />
         </>

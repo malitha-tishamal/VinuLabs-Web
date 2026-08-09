@@ -75,7 +75,7 @@ const TechStack = () => {
             {t.techTitle}
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-xs md:text-sm">
-            Battle-tested engineering technologies powering our enterprise solutions, cloud architectures, and intelligent systems.
+            {t.techSubtitle}
           </p>
         </div>
 

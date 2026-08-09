@@ -18,6 +18,8 @@ const page = () => {
         title="Services"
         description="Complete technology solutions designed to transform your business and drive innovation across industries."
         breadcrumbLinks={breadcrumbLinks}
+        titleKey="servicesPageTitle"
+        descKey="servicesPageDesc"
       />
       <DetailedServices/>
     </>

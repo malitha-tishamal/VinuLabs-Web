@@ -71,8 +71,8 @@ const Footer: FC = () => {
             © {new Date().getFullYear()} VinuLabs Pvt Ltd. {t.footerRights}
           </p>
           <div className='flex items-center gap-6 text-xs text-slate-500'>
-            <Link href='#' className='hover:text-cyan-400 transition-colors'>Privacy Policy</Link>
-            <Link href='#' className='hover:text-cyan-400 transition-colors'>Terms & Conditions</Link>
+            <Link href='#' className='hover:text-cyan-400 transition-colors'>{t.footerPrivacy}</Link>
+            <Link href='#' className='hover:text-cyan-400 transition-colors'>{t.footerTerms}</Link>
           </div>
         </div>
       </div>

@@ -10,6 +10,11 @@ const Contactform = () => {
   });
   const [submitting, setSubmitting] = useState(false);
 
+  // Update service when language changes
+  React.useEffect(() => {
+    setFormData(prev => ({ ...prev, service: t.contactFormSubject }));
+  }, [t]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -79,21 +84,21 @@ const Contactform = () => {
               <div className='flex items-start gap-4 p-4 rounded-xl bg-slate-900/50 border border-slate-800'>
                 <span className='text-xl'>✉</span>
                 <div>
-                  <span className='text-xs text-slate-500 uppercase font-mono block mb-1'>Email Us</span>
+                  <span className='text-xs text-slate-500 uppercase font-mono block mb-1'>{t.footerEmail}</span>
                   <span className='text-white text-sm font-medium'> hello@vinulabs.lk</span>
                 </div>
               </div>
               <div className='flex items-start gap-4 p-4 rounded-xl bg-slate-900/50 border border-slate-800'>
                 <span className='text-xl'>📍</span>
                 <div>
-                  <span className='text-xs text-slate-500 uppercase font-mono block mb-1'>Location</span>
-                  <span className='text-white text-sm font-medium'>Sri Lanka</span>
+                  <span className='text-xs text-slate-500 uppercase font-mono block mb-1'>{t.footerLocation.split('\n')[0]}</span>
+                  <span className='text-white text-sm font-medium'>{t.footerLocation.split('\n')[1]}</span>
                 </div>
               </div>
               <div className='flex items-start gap-4 p-4 rounded-xl bg-slate-900/50 border border-slate-800'>
                 <span className='text-xl'>🔗</span>
                 <div>
-                  <span className='text-xs text-slate-500 uppercase font-mono block mb-1'>Connect</span>
+                  <span className='text-xs text-slate-500 uppercase font-mono block mb-1'>{t.footerConnect}</span>
                   <div className='flex gap-3 mt-1'>
                     <a href='https://www.linkedin.com/company/vinulab/' target='_blank' rel='noopener noreferrer' className='text-cyan-400 hover:text-cyan-300 text-sm font-semibold transition-colors'>LinkedIn ↗</a>
                     <a href='#' className='text-cyan-400 hover:text-cyan-300 text-sm font-semibold transition-colors'>GitHub ↗</a>
@@ -107,28 +112,28 @@ const Contactform = () => {
           {/* Right - Form */}
           <div data-aos='fade-left' data-aos-duration='800'>
             <div className='p-8 rounded-2xl bg-slate-900/70 border border-slate-800 backdrop-blur-xl'>
-              <h3 className='text-lg font-bold text-white mb-6'>Project Discussion & Consultation</h3>
+              <h3 className='text-lg font-bold text-white mb-6'>{t.contactFormTitle}</h3>
               <form onSubmit={handleSubmit} className='space-y-4'>
                 <div className='grid grid-cols-2 gap-4'>
-                  <input name='name' value={formData.name} onChange={handleChange} type='text' placeholder='Full Name *' required className='w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500' />
-                  <input name='company' value={formData.company} onChange={handleChange} type='text' placeholder='Company Name *' className='w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500' />
+                  <input name='name' value={formData.name} onChange={handleChange} type='text' placeholder={t.contactFormFullName} required className='w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500' />
+                  <input name='company' value={formData.company} onChange={handleChange} type='text' placeholder={t.contactFormCompany} className='w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500' />
                 </div>
                 <div className='grid grid-cols-2 gap-4'>
-                  <input name='email' value={formData.email} onChange={handleChange} type='email' placeholder='Email Address *' required className='w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500' />
-                  <input name='phone' value={formData.phone} onChange={handleChange} type='tel' placeholder='Phone Number' className='w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500' />
+                  <input name='email' value={formData.email} onChange={handleChange} type='email' placeholder={t.contactFormEmail} required className='w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500' />
+                  <input name='phone' value={formData.phone} onChange={handleChange} type='tel' placeholder={t.contactFormPhone} className='w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500' />
                 </div>
                 <select name='service' value={formData.service} onChange={handleChange} className='w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700 text-sm text-white focus:outline-none focus:ring-2 focus:ring-cyan-500'>
-                  <option value='General Inquiry'>General Inquiry</option>
-                  <option value='AI Strategy & Adoption'>AI Strategy & Adoption</option>
-                  <option value='Architecture & Engineering'>Architecture & Engineering</option>
-                  <option value='Business Transformation'>Business Transformation</option>
-                  <option value='Professional Training'>Professional Training</option>
-                  <option value='Applied AI & R&D'>Applied AI & R&D</option>
-                  <option value='Delivery Leadership'>Delivery Leadership</option>
+                  <option value='General Inquiry'>{t.contactFormSubject}</option>
+                  <option value='AI Strategy & Adoption'>{t.service1Title}</option>
+                  <option value='Architecture & Engineering'>{t.service2Title}</option>
+                  <option value='Business Transformation'>{t.service3Title}</option>
+                  <option value='Professional Training'>{t.service4Title}</option>
+                  <option value='Applied AI & R&D'>{t.service5Title}</option>
+                  <option value='Delivery Leadership'>{t.service6Title}</option>
                 </select>
-                <textarea name='message' value={formData.message} onChange={handleChange} placeholder='Tell us about your goals, technical constraints, or training requirements...' required rows={5} className='w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 resize-none' />
+                <textarea name='message' value={formData.message} onChange={handleChange} placeholder={t.contactFormMessage} required rows={5} className='w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 resize-none' />
                 <button type='submit' disabled={submitting} className='w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50'>
-                  {submitting ? 'Sending...' : 'Submit Inquiry ↗'}
+                  {submitting ? 'Sending...' : t.contactFormSubmit}
                 </button>
               </form>
             </div>

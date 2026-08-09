@@ -1,8 +1,12 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import { teamMembers } from '@/app/api/data'
+import { useLanguage } from '@/context/LanguageContext'
 
 const Team = () => {
+  const { t } = useLanguage()
+
   return (
     <section className='py-20 bg-slate-50 dark:bg-[#0b0f17] transition-colors relative overflow-hidden' id='team'>
       <div className='absolute bottom-0 left-10 w-80 h-80 bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none' />
@@ -10,13 +14,13 @@ const Team = () => {
       <div className='container mx-auto max-w-7xl px-6 relative z-10'>
         <div className='text-center max-w-3xl mx-auto space-y-4 mb-16'>
           <span className='inline-block px-4 py-1.5 rounded-full text-xs font-mono font-bold tracking-widest text-emerald-500 dark:text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 uppercase'>
-            Leadership & Vision
+            {t.teamTag}
           </span>
           <h2 className='text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight' data-aos='fade-up' data-aos-duration='800'>
-            Our Strength.
+            {t.teamTitle}
           </h2>
           <p className='text-slate-600 dark:text-slate-400 text-base md:text-lg max-w-2xl mx-auto'>
-            Three perspectives. One shared standard of technical and academic excellence.
+            {t.teamSubtitle}
           </p>
         </div>
 

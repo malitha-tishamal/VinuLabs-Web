@@ -1,10 +1,10 @@
 import { getImgPath } from "@/utils/image";
 
 export const menuItems = [
-    { name: "Home", href: "#home" },
-    { name: "Expertise", href: "#services" },
-    { name: "Approach", href: "#approach" },
-    { name: "Team", href: "#team" },
+    { nameKey: "navHome", href: "#home" },
+    { nameKey: "navServices", href: "#services" },
+    { nameKey: "navApproach", href: "#approach" },
+    { nameKey: "navTeam", href: "#team" },
 ];
 
 export const count = [
@@ -34,39 +34,39 @@ export const Progress = [
 export const Servicebox = [
     {
         icon: getImgPath('/images/services/ux-design-product_1.svg'),
-        title: 'AI Strategy & Adoption',
-        description: 'Turn AI ambition into measurable business value—prioritised use cases, responsible adoption, and practical roadmaps.',
-        tags: ['AI readiness', 'Roadmaps', 'Governance', 'Automation', 'Responsible AI'],
+        titleKey: 'service1Title',
+        descriptionKey: 'service1Desc',
+        tagsKey: 'service1List',
     },
     {
         icon: getImgPath('/images/services/perfomance-optimization.svg'),
-        title: 'Architecture & Engineering',
-        description: 'Design scalable, secure and cloud-ready systems with clear technical direction from concept through delivery.',
-        tags: ['Cloud architecture', 'Platform engineering', 'Technical reviews', 'Security', 'DevOps'],
+        titleKey: 'service2Title',
+        descriptionKey: 'service2Desc',
+        tagsKey: 'service2List',
     },
     {
         icon: getImgPath('/images/services/ux-design-product_2.svg'),
-        title: 'Business Transformation',
-        description: 'Connect customer needs, process improvement and technology choices to create solutions that work in the real world.',
-        tags: ['Discovery', 'Process optimization', 'Innovation', 'Customer experience'],
+        titleKey: 'service3Title',
+        descriptionKey: 'service3Desc',
+        tagsKey: 'service3List',
     },
     {
         icon: getImgPath('/images/services/ux-design-product_1.svg'),
-        title: 'Professional Training',
-        description: 'Build confident, capable teams through tailored programmes in AI, software engineering, cybersecurity and digital skills.',
-        tags: ['AI literacy', 'Cybersecurity', 'Software engineering', 'Leadership', 'Upskilling'],
+        titleKey: 'service4Title',
+        descriptionKey: 'service4Desc',
+        tagsKey: 'service4List',
     },
     {
         icon: getImgPath('/images/services/perfomance-optimization.svg'),
-        title: 'Applied AI & Research',
-        description: 'Bridge research and industry with intelligent prototypes, data-driven models and evidence-led technical experimentation.',
-        tags: ['Machine learning', 'Deep learning', 'Data science', 'Research', 'Prototyping'],
+        titleKey: 'service5Title',
+        descriptionKey: 'service5Desc',
+        tagsKey: 'service5List',
     },
     {
         icon: getImgPath('/images/services/ux-design-product_2.svg'),
-        title: 'Delivery Leadership',
-        description: 'Strengthen execution with technical oversight, project governance and hands-on guidance for engineering teams.',
-        tags: ['Project governance', 'Team mentoring', 'Technical oversight', 'Quality assurance'],
+        titleKey: 'service6Title',
+        descriptionKey: 'service6Desc',
+        tagsKey: 'service6List',
     },
 ];
 
@@ -99,28 +99,28 @@ export const portfolioinfo = [
 
 export const teamMembers = [
     {
-        name: 'Chamil Jeewantha',
-        role: 'Co-Founder & Director',
-        expertise: 'Technology Strategy · Architecture · Product Delivery',
-        bio: 'Software and technology leader focused on technical excellence, scalable platforms, product innovation, and long-term customer partnerships.',
+        nameKey: 'teamMember1Name',
+        roleKey: 'teamMember1Role',
+        expertiseKey: 'teamMember1Desc',
+        bioKey: 'teamMember1Bio',
         linkedin: 'https://www.linkedin.com/in/chamil/',
         image: getImgPath('/chamil-jeewantha.png'),
         initials: 'CJ',
     },
     {
-        name: 'Thamara Rangana Waidyarathne',
-        role: 'Co-Founder & Director · Academic & AI Strategy Lead',
-        expertise: 'AI Education · Training · Business Development',
-        bio: 'Academic leader, consultant, and AI researcher bringing together workforce development, responsible AI adoption, and industry–education collaboration.',
+        nameKey: 'teamMember2Name',
+        roleKey: 'teamMember2Role',
+        expertiseKey: 'teamMember2Desc',
+        bioKey: 'teamMember2Bio',
         linkedin: 'https://www.linkedin.com/in/thamara-rangana-waidyarathne-74a38459/',
         image: getImgPath('/thamara-waidyarathne.png'),
         initials: 'TW',
     },
     {
-        name: 'Dr. Sugandima Vidanagamachchi',
-        role: 'Applied AI & Research Lead',
-        expertise: 'AI/ML · Cybersecurity · Research & Innovation',
-        bio: 'Computer science researcher and senior academic specialising in machine learning, deep learning, cybersecurity, bioinformatics, and accelerated computing.',
+        nameKey: 'teamMember3Name',
+        roleKey: 'teamMember3Role',
+        expertiseKey: 'teamMember3Desc',
+        bioKey: 'teamMember3Bio',
         linkedin: 'https://www.linkedin.com/in/sugandima-vidanagamachchi-75205921/',
         image: getImgPath('/Dr.Sugandima.jpeg'),
         initials: 'SV',

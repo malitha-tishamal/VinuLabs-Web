@@ -83,17 +83,17 @@ const Services = () => {
                     group-hover:bg-gradient-to-r group-hover:${accent.from} group-hover:${accent.to}
                     group-hover:bg-clip-text group-hover:text-transparent
                     transition-all duration-300`}>
-                    {item.title}
+                    {t[item.titleKey as keyof typeof t]}
                   </h3>
 
                   <p className='text-sm text-slate-500 dark:text-slate-400 leading-relaxed'>
-                    {item.description}
+                    {t[item.descriptionKey as keyof typeof t]}
                   </p>
                 </div>
 
-                {item.tags && (
+                {item.tagsKey && (
                   <div className='flex flex-wrap gap-2 mt-6 pt-5 border-t border-slate-100 dark:border-slate-800/60 relative z-10'>
-                    {item.tags.map((tag: string, tIdx: number) => (
+                    {t[item.tagsKey as keyof typeof t].split(', ').map((tag: string, tIdx: number) => (
                       <span
                         key={tIdx}
                         className={`text-[11px] px-2.5 py-1 rounded-md font-semibold border

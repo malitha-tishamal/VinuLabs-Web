@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import { useLanguage } from '@/context/LanguageContext'
 
 const steps = [
   { num: '01', title: 'Understand', desc: 'We listen to your goals, customers, and constraints.',
@@ -15,6 +16,8 @@ const steps = [
 ]
 
 const Progresswork = ({ isColorMode }: { isColorMode: Boolean }) => {
+  const { t } = useLanguage()
+
   return (
     <section className='py-20 bg-white dark:bg-[#07090e] transition-colors relative overflow-hidden' id='approach'>
       <div className='absolute top-1/3 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px] pointer-events-none' />
@@ -22,13 +25,13 @@ const Progresswork = ({ isColorMode }: { isColorMode: Boolean }) => {
       <div className='container mx-auto max-w-7xl px-6'>
         <div className='text-center max-w-3xl mx-auto space-y-4 mb-16'>
           <span className='inline-block px-4 py-1.5 rounded-full text-xs font-mono font-bold tracking-widest text-purple-500 dark:text-purple-400 bg-purple-500/10 border border-purple-500/30 uppercase'>
-            Our Methodology
+            {t.workProgressTag}
           </span>
           <h2 className='text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight' data-aos='fade-up' data-aos-duration='800'>
-            How We Work.
+            {t.workProgressTitle}
           </h2>
           <p className='text-slate-600 dark:text-slate-400 text-base md:text-lg max-w-2xl mx-auto'>
-            A structured 5-step engineering and consulting workflow that takes you from ambiguity to sustainable enterprise scale.
+            {t.workProgressDesc}
           </p>
         </div>
 

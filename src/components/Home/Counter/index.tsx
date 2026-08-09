@@ -1,13 +1,17 @@
+'use client'
 import React from 'react'
-
-const stats = [
-  { value: '50+', label: 'Projects Delivered', color: 'text-cyan-400' },
-  { value: '20+', label: 'Industry Partners', color: 'text-purple-400' },
-  { value: '5000+', label: 'Professionals Trained', color: 'text-emerald-400' },
-  { value: '10+', label: 'Years of Experience', color: 'text-amber-400' },
-];
+import { useLanguage } from '@/context/LanguageContext'
 
 const Counter = ({ isColorMode }: { isColorMode: Boolean }) => {
+  const { t } = useLanguage()
+
+  const stats = [
+    { value: '50+', label: t.counterProjects, color: 'text-cyan-400' },
+    { value: '20+', label: t.counterClients, color: 'text-purple-400' },
+    { value: '5000+', label: t.counterExperts, color: 'text-emerald-400' },
+    { value: '10+', label: t.counterExperience, color: 'text-amber-400' },
+  ];
+
   return (
     <section className='py-14 bg-white dark:bg-[#07090e] border-y border-slate-200 dark:border-slate-800 transition-colors'>
       <div className='container mx-auto max-w-7xl px-6'>

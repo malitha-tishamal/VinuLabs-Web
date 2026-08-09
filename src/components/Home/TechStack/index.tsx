@@ -69,7 +69,7 @@ const TechStack = () => {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto space-y-2 mb-8">
           <span className="inline-block px-3 py-1 rounded-full text-[11px] font-mono font-bold tracking-wider text-cyan-500 dark:text-cyan-400 bg-cyan-500/10 border border-cyan-500/30 uppercase">
-            Modern Tooling & Frameworks
+            {t.modernTooling}
           </span>
           <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             {t.techTitle}

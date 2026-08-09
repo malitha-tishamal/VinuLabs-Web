@@ -1,5 +1,7 @@
+'use client'
 import React from 'react'
 import { Servicebox } from '@/app/api/data'
+import { useLanguage } from '@/context/LanguageContext'
 
 /* Per-card accent color palette — cycles across 6 vivid gradients */
 const CARD_ACCENTS = [
@@ -12,22 +14,24 @@ const CARD_ACCENTS = [
 ]
 
 const Services = () => {
+  const { t } = useLanguage()
+
   return (
     <section className='bg-slate-50 dark:bg-[#0b0f17] transition-colors py-20' id='services'>
       <div className='container mx-auto max-w-7xl px-6'>
         <div className='text-center max-w-3xl mx-auto space-y-4 mb-16'>
           <span className='inline-block px-4 py-1.5 rounded-full text-xs font-mono font-bold tracking-widest text-cyan-500 dark:text-cyan-400 bg-cyan-500/10 border border-cyan-500/30 uppercase'>
-            Our Capabilities
+            {t.servicesTag}
           </span>
           <h2
             className='text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight'
             data-aos='fade-up'
             data-aos-duration='800'>
-            End-to-End Expertise.<br/>
-            <span className='bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent'>Connected outcomes.</span>
+            {t.servicesTitle}<br/>
+            <span className='bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent'>{t.servicesSubtitle}</span>
           </h2>
           <p className='text-slate-600 dark:text-slate-400 text-base md:text-lg max-w-2xl mx-auto'>
-            Focused capabilities designed to solve immediate technical barriers while laying the groundwork for long-term growth.
+            {t.servicesDesc}
           </p>
         </div>
 

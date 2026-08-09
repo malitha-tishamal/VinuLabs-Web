@@ -37,7 +37,7 @@ const Team = () => {
                 {member.image ? (
                   <Image
                     src={member.image}
-                    alt={member.name}
+                    alt={t[member.nameKey as keyof typeof t]}
                     width={150}
                     height={150}
                     className='w-full h-full object-cover'
@@ -52,19 +52,19 @@ const Team = () => {
               </div>
 
               <span className='text-xs px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-semibold border border-emerald-500/20 mb-3'>
-                {member.role}
+                {t[member.roleKey as keyof typeof t]}
               </span>
 
               <h3 className='text-lg font-bold text-slate-900 dark:text-white mb-1'>
-                {member.name}
+                {t[member.nameKey as keyof typeof t]}
               </h3>
 
               <p className='text-xs text-cyan-600 dark:text-cyan-400 font-mono mb-4'>
-                {member.expertise}
+                {t[member.expertiseKey as keyof typeof t]}
               </p>
 
               <p className='text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6'>
-                {member.bio}
+                {member.bioKey ? t[member.bioKey as keyof typeof t] : 'Bio not available'}
               </p>
 
               <a
@@ -72,7 +72,7 @@ const Team = () => {
                 target='_blank'
                 rel='noopener noreferrer'
                 className='inline-flex items-center gap-1 text-sm text-cyan-500 hover:text-cyan-400 font-semibold transition-colors mt-auto'>
-                LinkedIn Profile ↗
+                {t.linkedinProfile}
               </a>
             </div>
           ))}

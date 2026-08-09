@@ -3,10 +3,15 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { HeaderItem } from '../../../../types/menu';
 import { usePathname } from 'next/navigation';
+import { useLanguage } from '@/context/LanguageContext';
 
 const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
-  const path = usePathname()
+  const path = usePathname();
+  const { t } = useLanguage();
+
+  const label = item.key && t[item.key as keyof typeof t] ? t[item.key as keyof typeof t] : item.label;
+
   const handleMouseEnter = () => {
     if (item.submenu) {
       setSubmenuOpen(true);
@@ -24,7 +29,7 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
       onMouseLeave={handleMouseLeave}
     >
       <Link href={item.href} className={`text-base flex py-2 font-normal hover:text-primary dark:hover:text-primary text-black dark:text-white  ${path === item.href ? 'text-primary dark:text-primary!' : '  '} ${path.startsWith("/blog") && item.href==="/blog"?"text-primary! dark:text-primary!":null} ${path.startsWith("/portfolio") && item.href==="/portfolio"?"text-primary! dark:text-primary!":null}`}>
-        {item.label}
+        {label}
         {item.submenu && (
           <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
             <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m7 10l5 5l5-5" />

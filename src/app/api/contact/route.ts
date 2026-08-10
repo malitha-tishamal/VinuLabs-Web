@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 // Email configuration
-const EMAIL_TO = 'malithatishamal@gmail.com';
+const EMAIL_TO = 'hello@vinulabs.lk';
 
 // Temporary in-memory / state store for messages (persists during server uptime)
 let messagesStore = [

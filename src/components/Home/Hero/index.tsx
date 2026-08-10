@@ -190,13 +190,19 @@ const Hero = () => {
               className='py-3.5 px-8 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all duration-200'>
               {t.heroCtaPrimary}
             </Link>
-            <a
-              href='https://www.linkedin.com/company/vinulab/'
-              target='_blank'
-              rel='noopener noreferrer'
+            <button
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                  setTimeout(() => {
+                    window.dispatchEvent(new CustomEvent('openConversationModal'));
+                  }, 800);
+                }
+              }}
               className='py-3.5 px-8 rounded-full bg-slate-100 dark:bg-slate-800/80 text-slate-800 dark:text-white font-semibold border border-slate-300 dark:border-slate-700/80 hover:bg-slate-200 dark:hover:bg-slate-700/80 transition-all duration-200'>
               {t.heroCtaSecondary}
-            </a>
+            </button>
           </div>
 
           {/* Trust stats & profiles */}

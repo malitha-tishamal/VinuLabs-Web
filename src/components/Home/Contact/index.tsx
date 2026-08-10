@@ -9,11 +9,26 @@ const Contactform = () => {
     name: '', email: '', company: '', phone: '', service: 'General Inquiry', message: '',
   });
   const [submitting, setSubmitting] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Update service when language changes
   React.useEffect(() => {
     setFormData(prev => ({ ...prev, service: t.contactFormSubject }));
   }, [t]);
+
+  // Listen for custom event to open modal from Hero section
+  React.useEffect(() => {
+    const handleOpenModal = () => setIsModalOpen(true);
+    window.addEventListener('openConversationModal', handleOpenModal);
+    return () => window.removeEventListener('openConversationModal', handleOpenModal);
+  }, []);
+
+  // Auto-open modal if URL has #contact hash
+  React.useEffect(() => {
+    if (window.location.hash === '#contact') {
+      setIsModalOpen(true);
+    }
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -56,6 +71,53 @@ Submitted: ${new Date().toLocaleString()}
       if (data.success) {
         toast.success('Opening email client...');
         setFormData({ name: '', email: '', company: '', phone: '', service: 'General Inquiry', message: '' });
+        setIsModalOpen(false);
+      }
+    } catch {
+      toast.error('Email client opened, but storage failed.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const handleModalSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    
+    // Generate mailto link
+    const subject = encodeURIComponent(`New Conversation Request: ${formData.service}`);
+    const body = encodeURIComponent(`
+New Conversation Request from VinuLabs Website
+
+Service Type: ${formData.service}
+Full Name: ${formData.name}
+Company: ${formData.company}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+Message:
+${formData.message}
+
+Submitted: ${new Date().toLocaleString()}
+    `);
+    
+    const mailtoLink = `mailto:malithatishamal@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Also store in database
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (data.success) {
+        toast.success('Opening email client...');
+        setFormData({ name: '', email: '', company: '', phone: '', service: 'General Inquiry', message: '' });
+        setIsModalOpen(false);
       }
     } catch {
       toast.error('Email client opened, but storage failed.');
@@ -81,9 +143,12 @@ Submitted: ${new Date().toLocaleString()}
             {t.contactDesc}
           </p>
           <div className='flex gap-4 justify-center flex-wrap'>
-            <a href='https://www.linkedin.com/company/vinulab/' target='_blank' rel='noopener noreferrer' className='px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all'>
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className='px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all'
+            >
               {t.heroCtaSecondary}
-            </a>
+            </button>
           </div>
         </div>
 
@@ -162,6 +227,92 @@ Submitted: ${new Date().toLocaleString()}
           </div>
         </div>
       </div>
+
+      {/* Conversation Modal */}
+      {isModalOpen && (
+        <div className='fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm'>
+          <div className='w-full max-w-md bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-2xl'>
+            <div className='flex items-center justify-between mb-6'>
+              <h3 className='text-xl font-bold text-white'>Start a Conversation</h3>
+              <button 
+                onClick={() => setIsModalOpen(false)}
+                className='text-slate-400 hover:text-white transition-colors'
+              >
+                <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M6 18L18 6M6 6l12 12' />
+                </svg>
+              </button>
+            </div>
+            
+            <form onSubmit={handleModalSubmit} className='space-y-4'>
+              <input 
+                name='name' 
+                value={formData.name} 
+                onChange={handleChange} 
+                type='text' 
+                placeholder={t.contactFormFullName} 
+                required 
+                className='w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500' 
+              />
+              <input 
+                name='email' 
+                value={formData.email} 
+                onChange={handleChange} 
+                type='email' 
+                placeholder={t.contactFormEmail} 
+                required 
+                className='w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500' 
+              />
+              <input 
+                name='company' 
+                value={formData.company} 
+                onChange={handleChange} 
+                type='text' 
+                placeholder={t.contactFormCompany} 
+                className='w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500' 
+              />
+              <input 
+                name='phone' 
+                value={formData.phone} 
+                onChange={handleChange} 
+                type='tel' 
+                placeholder={t.contactFormPhone} 
+                className='w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500' 
+              />
+              <select 
+                name='service' 
+                value={formData.service} 
+                onChange={handleChange} 
+                className='w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700 text-sm text-white focus:outline-none focus:ring-2 focus:ring-cyan-500'
+              >
+                <option value='General Inquiry'>{t.contactFormSubject}</option>
+                <option value='AI Strategy & Adoption'>{t.service1Title}</option>
+                <option value='Architecture & Engineering'>{t.service2Title}</option>
+                <option value='Business Transformation'>{t.service3Title}</option>
+                <option value='Professional Training'>{t.service4Title}</option>
+                <option value='Applied AI & R&D'>{t.service5Title}</option>
+                <option value='Delivery Leadership'>{t.service6Title}</option>
+              </select>
+              <textarea 
+                name='message' 
+                value={formData.message} 
+                onChange={handleChange} 
+                placeholder={t.contactFormMessage} 
+                required 
+                rows={4} 
+                className='w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 resize-none' 
+              />
+              <button 
+                type='submit' 
+                disabled={submitting} 
+                className='w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50'
+              >
+                {submitting ? 'Sending...' : 'Start Conversation ↗'}
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

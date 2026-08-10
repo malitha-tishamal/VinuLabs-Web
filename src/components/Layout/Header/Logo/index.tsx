@@ -1,5 +1,3 @@
-import { getImgPath } from '@/utils/image';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -8,26 +6,10 @@ const Logo: React.FC = () => {
   
   return (
     <Link href="/" className="flex items-center">
-      <Image
-        src={getImgPath("/images/logo/logo.svg")}
-        alt={`VinuLabs - ${t.expertiseTitle}`}
-        width={160}
-        height={48}
-        style={{ width: 'auto', height: '36px' }}
-        quality={100}
-        priority
-        className='dark:hidden'
-      />
-      <Image
-        src={getImgPath("/images/logo/logo-white.svg")}
-        alt={`VinuLabs - ${t.expertiseTitle}`}
-        width={160}
-        height={48}
-        style={{ width: 'auto', height: '36px' }}
-        quality={100}
-        priority
-        className='dark:block hidden'
-      />
+      <h2 className='text-2xl font-bold'>
+        <span className='text-white dark:text-white'>Vinu</span>
+        <span className='text-cyan-400 dark:text-cyan-400'>Labs</span>
+      </h2>
     </Link>
   );
 };

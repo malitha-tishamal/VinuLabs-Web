@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server';
 
+// Email configuration
+const EMAIL_TO = 'malithatishamal@gmail.com';
+
 // Temporary in-memory / state store for messages (persists during server uptime)
 let messagesStore = [
   {
@@ -26,6 +29,27 @@ let messagesStore = [
   },
 ];
 
+// Function to generate mailto link for opening email client
+function generateMailtoLink(formData: any) {
+  const subject = encodeURIComponent(`New Contact Form Submission: ${formData.service}`);
+  const body = encodeURIComponent(`
+New Contact Form Submission
+
+Service Type: ${formData.service}
+Full Name: ${formData.name}
+Company: ${formData.company}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+Message:
+${formData.message}
+
+Submitted: ${new Date().toLocaleString()}
+  `);
+  
+  return `mailto:${EMAIL_TO}?subject=${subject}&body=${body}`;
+}
+
 export async function GET() {
   return NextResponse.json({ success: true, messages: messagesStore });
 }
@@ -44,8 +68,19 @@ export async function POST(request: Request) {
       date: new Date().toLocaleString(),
       status: 'Unread',
     };
+    
+    // Store message
     messagesStore.unshift(newMessage);
-    return NextResponse.json({ success: true, message: 'Message sent successfully!', data: newMessage });
+    
+    // Generate mailto link for manual email sending
+    const mailtoLink = generateMailtoLink(newMessage);
+    
+    return NextResponse.json({ 
+      success: true, 
+      message: 'Message stored successfully! Click the link below to send email:',
+      mailtoLink: mailtoLink,
+      data: newMessage 
+    });
   } catch (error) {
     return NextResponse.json({ success: false, error: 'Failed to process contact request' }, { status: 400 });
   }

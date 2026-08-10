@@ -22,6 +22,30 @@ const Contactform = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
+    
+    // Generate mailto link
+    const subject = encodeURIComponent(`New Contact Form Submission: ${formData.service}`);
+    const body = encodeURIComponent(`
+New Contact Form Submission
+
+Service Type: ${formData.service}
+Full Name: ${formData.name}
+Company: ${formData.company}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+Message:
+${formData.message}
+
+Submitted: ${new Date().toLocaleString()}
+    `);
+    
+    const mailtoLink = `mailto:malithatishamal@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Also store in database
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
@@ -30,13 +54,11 @@ const Contactform = () => {
       });
       const data = await res.json();
       if (data.success) {
-        toast.success('Message sent successfully!');
+        toast.success('Opening email client...');
         setFormData({ name: '', email: '', company: '', phone: '', service: 'General Inquiry', message: '' });
-      } else {
-        toast.error('Failed to send message.');
       }
     } catch {
-      toast.error('Network error. Please try again.');
+      toast.error('Email client opened, but storage failed.');
     } finally {
       setSubmitting(false);
     }
@@ -85,7 +107,7 @@ const Contactform = () => {
                 <span className='text-xl'>✉</span>
                 <div>
                   <span className='text-xs text-slate-500 uppercase font-mono block mb-1'>{t.footerEmail}</span>
-                  <span className='text-white text-sm font-medium'> hello@vinulabs.lk</span>
+                  <a href='mailto:hello@vinulabs.lk' className='text-white text-sm font-medium hover:text-cyan-400 transition-colors'> hello@vinulabs.lk</a>
                 </div>
               </div>
               <div className='flex items-start gap-4 p-4 rounded-xl bg-slate-900/50 border border-slate-800'>

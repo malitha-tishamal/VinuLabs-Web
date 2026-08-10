@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 type Step = 'form' | 'sent';
 
@@ -43,26 +42,10 @@ export default function ForgotPasswordPage() {
         {/* Brand */}
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex flex-col items-center gap-2 mb-6 group">
-            {/* Light mode logo */}
-            <Image
-              src="/images/logo/logo.svg"
-              alt="VinuLabs"
-              width={200}
-              height={56}
-              style={{ width: 'auto', height: '52px' }}
-              priority
-              className="dark:hidden group-hover:opacity-90 transition-opacity"
-            />
-            {/* Dark mode logo */}
-            <Image
-              src="/images/logo/logo-white.svg"
-              alt="VinuLabs"
-              width={200}
-              height={56}
-              style={{ width: 'auto', height: '52px' }}
-              priority
-              className="hidden dark:block group-hover:opacity-90 transition-opacity"
-            />
+            <h2 className='text-3xl font-bold group-hover:opacity-90 transition-opacity'>
+              <span className='text-slate-900 dark:text-white'>Vinu</span>
+              <span className='text-cyan-400 dark:text-cyan-400'>Labs</span>
+            </h2>
           </Link>
 
           {step === 'form' ? (

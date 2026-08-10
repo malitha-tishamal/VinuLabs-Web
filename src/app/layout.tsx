@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     description: defaultDescription,
     images: [
       {
-        url: `${baseUrl}/images/logo/logo.svg`,
+        url: `${baseUrl}/images/logo/logo.png`,
         width: 1200,
         height: 630,
         alt: 'VinuLabs Logo',
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: defaultTitle,
     description: defaultDescription,
-    images: [`${baseUrl}/images/logo/logo.svg`],
+    images: [`${baseUrl}/images/logo/logo.png`],
     creator: '@vinulabs',
   },
   robots: {
@@ -81,9 +81,9 @@ export const metadata: Metadata = {
     canonical: baseUrl,
   },
   icons: {
-    icon: '/images/logo/icon.svg',
-    shortcut: '/images/logo/icon.svg',
-    apple: '/images/logo/icon.svg',
+    icon: '/images/logo/logo.png',
+    shortcut: '/images/logo/logo.png',
+    apple: '/images/logo/logo.png',
   },
 };
 
@@ -96,7 +96,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="canonical" href={baseUrl} />
-        <link rel="icon" href="/images/logo/icon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/images/logo/logo.png" type="image/png" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>

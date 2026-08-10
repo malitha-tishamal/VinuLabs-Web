@@ -1,8 +1,6 @@
 'use client'
 import React, { FC } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
-import { getImgPath } from '@/utils/image'
 import { useLanguage } from '@/context/LanguageContext'
 
 const Footer: FC = () => {
@@ -15,15 +13,10 @@ const Footer: FC = () => {
           {/* Brand Column */}
           <div className='md:col-span-4 space-y-4'>
             <Link href='/' className='inline-block'>
-              <Image
-                src={getImgPath('/images/logo/logo-white.svg')}
-                alt='VinuLabs'
-                width={140}
-                height={40}
-                style={{ width: 'auto', height: 'auto' }}
-                quality={85}
-                loading='lazy'
-              />
+              <h2 className='text-2xl font-bold'>
+                <span className='text-white'>Vinu</span>
+                <span className='text-cyan-400'>Labs</span>
+              </h2>
             </Link>
             <p className='text-slate-400 text-sm leading-relaxed max-w-xs'>
               {t.footerTagline}

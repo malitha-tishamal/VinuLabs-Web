@@ -55,7 +55,7 @@ ${formData.message}
 Submitted: ${new Date().toLocaleString()}
     `);
     
-    const mailtoLink = `mailto:malithatishamal@gmail.com?subject=${subject}&body=${body}`;
+    const mailtoLink = `mailto:hello@vinulabs.lk?subject=${subject}&body=${body}`;
     
     // Open email client
     window.location.href = mailtoLink;
@@ -101,7 +101,7 @@ ${formData.message}
 Submitted: ${new Date().toLocaleString()}
     `);
     
-    const mailtoLink = `mailto:malithatishamal@gmail.com?subject=${subject}&body=${body}`;
+    const mailtoLink = `mailto:hello@vinulabs.lk?subject=${subject}&body=${body}`;
     
     // Open email client
     window.location.href = mailtoLink;

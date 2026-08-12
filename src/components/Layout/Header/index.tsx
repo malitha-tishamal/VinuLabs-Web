@@ -7,7 +7,7 @@ import Logo from './Logo'
 import HeaderLink from '../Header/Navigation/HeaderLink'
 import MobileHeaderLink from '../Header/Navigation/MobileHeaderLink'
 import { useTheme } from 'next-themes'
-import { useLanguage, Language } from '@/context/LanguageContext'
+import { useLanguage } from '@/context/LanguageContext'
 
 const Header: React.FC = () => {
   const pathUrl = usePathname()
@@ -81,19 +81,6 @@ const Header: React.FC = () => {
             <svg viewBox="0 0 16 16" fill="currentColor" className="w-3.5 h-3.5"><path d="M8 8a3 3 0 100-6 3 3 0 000 6zm0 2c-3.866 0-7 1.79-7 4v.5h14V14c0-2.21-3.134-4-7-4z"/></svg>
             {t.navAdmin}
           </Link>
-          {/* Language Selector */}
-          <select
-            value={language}
-            onChange={(e) => setLanguage(e.target.value as Language)}
-            className="bg-slate-100 dark:bg-slate-800 text-xs text-slate-800 dark:text-white border border-slate-300 dark:border-slate-700 rounded-lg px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-cyan-500 cursor-pointer"
-            aria-label="Select Language"
-          >
-            <option value="en">🇬🇧 EN</option>
-            <option value="si">🇱🇰 SI</option>
-            <option value="ta">🇱🇰 TA</option>
-            <option value="ja">🇯🇵 JP</option>
-          </select>
-
           {/* Theme Toggle */}
           <button
             aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}

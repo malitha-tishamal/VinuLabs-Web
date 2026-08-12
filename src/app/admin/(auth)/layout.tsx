@@ -59,12 +59,12 @@ export default function AdminAuthLayout({ children }: { children: React.ReactNod
               quality={100}
               priority
             />
-            <h2 className='text-2xl font-bold hidden sm:block'>
+            <h2 className='text-xl sm:text-2xl font-bold'>
               <span className='text-white dark:text-white'>Vinu</span>
               <span className='text-cyan-400 dark:text-cyan-400'>Labs</span>
             </h2>
           </div>
-          <p className='text-white text-xs hidden sm:block font-bold text-center'>
+          <p className='text-white text-[10px] sm:text-xs font-bold text-center mt-1'>
             Innovating with Vision,<br/>
             Novelty, and Unity
           </p>

@@ -6,20 +6,26 @@ const Logo: React.FC = () => {
   const { t } = useLanguage();
   
   return (
-    <Link href="/" className="flex items-center gap-3">
-      <Image
-        src="/images/logo/logo.png"
-        alt={`VinuLabs - ${t.expertiseTitle}`}
-        width={160}
-        height={48}
-        style={{ width: 'auto', height: '36px' }}
-        quality={100}
-        priority
-      />
-      <h2 className='text-2xl font-bold hidden sm:block'>
-        <span className='text-white dark:text-white'>Vinu</span>
-        <span className='text-cyan-400 dark:text-cyan-400'>Labs</span>
-      </h2>
+    <Link href="/" className="flex flex-col">
+      <div className="flex items-center gap-3">
+        <Image
+          src="/images/logo/logo.png"
+          alt={`VinuLabs - Innovating with Vision, Novelty, and Unity`}
+          width={160}
+          height={48}
+          style={{ width: 'auto', height: '36px' }}
+          quality={100}
+          priority
+        />
+        <h2 className='text-2xl font-bold hidden sm:block'>
+          <span className='text-white dark:text-white'>Vinu</span>
+          <span className='text-cyan-400 dark:text-cyan-400'>Labs</span>
+        </h2>
+      </div>
+      <p className='text-white text-xs hidden sm:block font-bold text-center'>
+        Innovating with Vision,<br/>
+        Novelty, and Unity
+      </p>
     </Link>
   );
 };

@@ -55,12 +55,11 @@ export default function AdminLoginPage() {
 
         {/* Logo / Brand */}
         <div className="text-center mb-8">
-          <Link href="/" className="inline-flex flex-col items-center gap-2 mb-6 group">
-            <div className="flex items-center gap-3">
-              
-
-            </div>
-          </Link>
+          <div className="w-16 h-16 rounded-full bg-cyan-500/10 dark:bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-cyan-500/10">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-cyan-600 dark:text-cyan-400">
+              <path fillRule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.6-7.812-1.7a.75.75 0 01-.437-.695z" clipRule="evenodd"/>
+            </svg>
+          </div>
           <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">Welcome back</h1>
           <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">Sign in to your admin account</p>
         </div>

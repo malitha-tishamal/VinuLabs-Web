@@ -3,6 +3,8 @@
 import React from 'react';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 /* ── Inline theme toggle so auth pages need no Header/Footer ── */
 function AuthThemeToggle() {
@@ -45,6 +47,29 @@ function AuthThemeToggle() {
 export default function AdminAuthLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
+      <div className="fixed top-4 left-4 z-50">
+        <Link href="/" className="flex flex-col">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/images/logo/logo.png"
+              alt="VinuLabs - Innovating with Vision, Novelty, and Unity"
+              width={140}
+              height={40}
+              style={{ width: 'auto', height: '36px' }}
+              quality={100}
+              priority
+            />
+            <h2 className='text-2xl font-bold hidden sm:block'>
+              <span className='text-white dark:text-white'>Vinu</span>
+              <span className='text-cyan-400 dark:text-cyan-400'>Labs</span>
+            </h2>
+          </div>
+          <p className='text-white text-xs hidden sm:block font-bold text-center'>
+            Innovating with Vision,<br/>
+            Novelty, and Unity
+          </p>
+        </Link>
+      </div>
       <AuthThemeToggle />
       {children}
     </>

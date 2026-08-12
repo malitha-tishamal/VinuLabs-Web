@@ -13,7 +13,7 @@ const Footer: FC = () => {
         <div className='grid grid-cols-1 md:grid-cols-12 gap-12'>
           {/* Brand Column */}
           <div className='md:col-span-4 space-y-4'>
-            <Link href='/' className='inline-flex flex-col items-center'>
+            <Link href='/' className='inline-flex flex-col items-start'>
               <div className='flex items-center gap-3'>
                 <Image
                   src='/images/logo/logo.png'
@@ -29,11 +29,11 @@ const Footer: FC = () => {
                   <span className='text-cyan-400'>Labs</span>
                 </h2>
               </div>
-              <p className='text-white text-xs mt-1 font-bold text-center'>
+              <p className='text-white text-xs mt-1 font-bold text-left'>
                 Innovating with Vision,<br/>
                 Novelty, and Unity
               </p>
-              <p className='text-white text-sm mt-3 leading-relaxed'>
+              <p className='text-white text-sm mt-3 leading-relaxed text-left'>
                 Smart strategy. Systems that scale. Ideas that create impact. VinuLabs solves complex technology challenges.
               </p>
             </Link>

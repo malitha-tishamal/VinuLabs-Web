@@ -145,7 +145,7 @@ const dictionaries: Record<Language, Translations> = {
     navCaseStudies: "Case Studies",
     navTeam: "Team",
     navContact: "Contact",
-    navAdmin: "Admin",
+    navAdmin: "Administrator",
     navAbout: "About Us",
     navBlog: "Blog",
     navProducts: "Products",

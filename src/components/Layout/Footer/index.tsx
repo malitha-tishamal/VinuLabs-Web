@@ -29,9 +29,8 @@ const Footer: FC = () => {
                   <span className='text-cyan-400'>Labs</span>
                 </h2>
               </div>
-              <p className='text-white text-xs mt-1 font-bold text-center'>
-                Innovating with Vision,<br/>
-                Novelty, and Unity
+              <p className='text-white text-sm mt-3 leading-relaxed'>
+                Smart strategy. Systems that scale. Ideas that create impact. VinuLabs solves complex technology challenges.
               </p>
             </Link>
           </div>

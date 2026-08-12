@@ -13,24 +13,27 @@ const Footer: FC = () => {
         <div className='grid grid-cols-1 md:grid-cols-12 gap-12'>
           {/* Brand Column */}
           <div className='md:col-span-4 space-y-4'>
-            <Link href='/' className='inline-flex items-center gap-3'>
-              <Image
-                src='/images/logo/logo.png'
-                alt='VinuLabs'
-                width={140}
-                height={40}
-                style={{ width: 'auto', height: 'auto' }}
-                quality={85}
-                loading='lazy'
-              />
-              <h2 className='text-2xl font-bold'>
-                <span className='text-white'>Vinu</span>
-                <span className='text-cyan-400'>Labs</span>
-              </h2>
+            <Link href='/' className='inline-flex flex-col'>
+              <div className='flex items-center gap-3'>
+                <Image
+                  src='/images/logo/logo.png'
+                  alt={`VinuLabs - Innovating with Vision, Novelty, and Unity`}
+                  width={140}
+                  height={40}
+                  style={{ width: 'auto', height: 'auto' }}
+                  quality={85}
+                  loading='lazy'
+                />
+                <h2 className='text-2xl font-bold'>
+                  <span className='text-white'>Vinu</span>
+                  <span className='text-cyan-400'>Labs</span>
+                </h2>
+              </div>
+              <p className='text-white text-xs mt-1 font-bold text-center'>
+                Innovating with Vision,<br/>
+                Novelty, and Unity
+              </p>
             </Link>
-            <p className='text-slate-400 text-sm leading-relaxed max-w-xs'>
-              {t.footerTagline}
-            </p>
           </div>
 
           {/* Company Links */}

@@ -12,7 +12,7 @@ import { useLanguage } from '@/context/LanguageContext'
 const Header: React.FC = () => {
   const pathUrl = usePathname()
   const { theme, setTheme, resolvedTheme } = useTheme()
-  const { language, setLanguage, t } = useLanguage()
+  const { t } = useLanguage()
 
   const [mounted, setMounted] = useState(false)
   const [navbarOpen, setNavbarOpen] = useState(false)
@@ -59,7 +59,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed h-20 top-0 py-1 z-50 w-full transition-all ${
+      className={`fixed h-28 top-0 py-1 z-50 w-full transition-all ${
         sticky
           ? 'shadow-lg bg-white/90 backdrop-blur-md dark:shadow-dark-md dark:bg-slate-900/90'
           : 'bg-transparent shadow-none'

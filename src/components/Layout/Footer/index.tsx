@@ -13,7 +13,7 @@ const Footer: FC = () => {
         <div className='grid grid-cols-1 md:grid-cols-12 gap-12'>
           {/* Brand Column */}
           <div className='md:col-span-4 space-y-4'>
-            <Link href='/' className='inline-flex flex-col'>
+            <Link href='/' className='inline-flex flex-col items-center'>
               <div className='flex items-center gap-3'>
                 <Image
                   src='/images/logo/logo.png'

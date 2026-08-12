@@ -22,10 +22,10 @@ const Logo: React.FC = () => {
           <span className='text-cyan-400 dark:text-cyan-400'>Labs</span>
         </h2>
       </div>
-      <p className='text-white text-xs hidden sm:block font-bold text-center'>
+      <div className='text-white text-xs hidden sm:block font-bold text-center mt-1'>
         Innovating with Vision,<br/>
         Novelty, and Unity
-      </p>
+      </div>
     </Link>
   );
 };

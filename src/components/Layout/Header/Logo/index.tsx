@@ -17,12 +17,12 @@ const Logo: React.FC = () => {
           quality={100}
           priority
         />
-        <h2 className='text-2xl font-bold hidden sm:block'>
+        <h2 className='text-xl sm:text-2xl font-bold'>
           <span className='text-white dark:text-white'>Vinu</span>
           <span className='text-cyan-400 dark:text-cyan-400'>Labs</span>
         </h2>
       </div>
-      <div className='text-white text-xs hidden sm:block font-bold text-center mt-1 px-2 py-1'>
+      <div className='text-white text-[10px] sm:text-xs font-bold text-center mt-1 px-1 py-0.5'>
         Innovating with Vision,<br/>
         Novelty, and Unity
       </div>

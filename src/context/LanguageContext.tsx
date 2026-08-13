@@ -163,7 +163,7 @@ const dictionaries: Record<Language, Translations> = {
     heroCtaSecondary: "Start a Conversation ↗",
     techTitle: "Technology Stack",
     techSubtitle:
-      "Battle-tested engineering technologies powering our enterprise solutions, cloud architectures, and intelligent systems.",
+      "We choose battle-tested, high-performance technologies to build fast, secure, enterprise-grade applications. Whether you need a modern web app, cloud platform, or AI integration, our technology choices ensure your system scales seamlessly as your business grows.",
     techFrontend: "Frontend",
     techBackend: "Backend",
     techDatabase: "Database",

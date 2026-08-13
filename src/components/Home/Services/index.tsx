@@ -24,11 +24,11 @@ const Services = () => {
             {t.servicesTag}
           </span>
           <h2
-            className='text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight'
+            className='text-3xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight'
             data-aos='fade-up'
             data-aos-duration='800'>
             {t.servicesTitle}<br/>
-            <span className='bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent'>{t.servicesSubtitle}</span>
+            <span className='bg-gradient-to-r from-cyan-500 via-emerald-400 to-blue-500 bg-clip-text text-transparent'>{t.servicesSubtitle}</span>
           </h2>
           <p className='text-slate-600 dark:text-slate-400 text-base md:text-lg max-w-2xl mx-auto'>
             {t.servicesDesc}
@@ -55,7 +55,7 @@ const Services = () => {
                   flex flex-col justify-between cursor-pointer`}>
 
                 {/* Gradient top-edge accent bar */}
-                <div className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r ${accent.from} ${accent.to} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                <div className={`absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-cyan-500 via-emerald-400 to-violet-500 opacity-90 group-hover:opacity-100 transition-opacity duration-300`} />
 
                 {/* Corner glow blob */}
                 <div className={`absolute -top-8 -right-8 w-32 h-32 rounded-full bg-gradient-to-br ${accent.from} ${accent.to} opacity-0 group-hover:opacity-10 blur-2xl transition-opacity duration-500`} />

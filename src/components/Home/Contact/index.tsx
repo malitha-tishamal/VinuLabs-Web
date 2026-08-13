@@ -132,12 +132,13 @@ Submitted: ${new Date().toLocaleString()}
 
       <div className='container mx-auto max-w-7xl px-6 relative z-10'>
         {/* CTA Banner */}
-        <div className='text-center max-w-3xl mx-auto mb-16 p-10 rounded-2xl bg-gradient-to-r from-cyan-950/40 to-blue-950/40 border border-cyan-800/30' data-aos='fade-up'>
+        <div className='relative overflow-hidden text-center max-w-3xl mx-auto mb-16 p-10 rounded-2xl bg-gradient-to-r from-cyan-950/40 to-blue-950/40 border border-cyan-800/30' data-aos='fade-up'>
+          <div className='absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 via-emerald-400 to-violet-500' />
           <span className='inline-block px-4 py-1.5 rounded-full text-xs font-mono font-bold tracking-widest text-cyan-400 bg-cyan-500/10 border border-cyan-500/30 uppercase mb-4'>
             {t.contactTitle}
           </span>
-          <h2 className='text-2xl md:text-4xl font-extrabold text-white tracking-tight mb-4'>
-            {t.contactTitle}
+          <h2 className='text-3xl md:text-4xl font-black text-white tracking-tight mb-4'>
+            Contact <span className='bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 via-emerald-400 to-blue-500'>Us</span>
           </h2>
           <p className='text-slate-400 text-sm md:text-base mb-6'>
             {t.contactDesc}
@@ -159,8 +160,8 @@ Submitted: ${new Date().toLocaleString()}
               <span className='inline-block px-4 py-1.5 rounded-full text-xs font-mono font-bold tracking-widest text-cyan-400 bg-cyan-500/10 border border-cyan-500/30 uppercase mb-4'>
                 {t.contactTitle}
               </span>
-              <h2 className='text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-tight'>
-                {t.contactTitle}
+              <h2 className='text-3xl md:text-4xl font-black text-white tracking-tight leading-tight'>
+                Contact <span className='bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 via-emerald-400 to-blue-500'>Us</span>
               </h2>
               <p className='text-slate-400 text-base mt-4 max-w-md'>
                 {t.contactDesc}

@@ -68,8 +68,8 @@ const TechStack = () => {
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-mono font-bold tracking-wider text-cyan-600 dark:text-cyan-400 bg-cyan-500/10 border border-cyan-500/30 uppercase">
             {t.modernTooling}
           </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            {t.techTitle}
+          <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
+            Technology <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 via-emerald-400 to-blue-500">Stack</span>
           </h2>
           <p className="text-slate-600 dark:text-slate-300 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
             {t.techSubtitle}
@@ -79,8 +79,9 @@ const TechStack = () => {
         {/* Business Value Highlights */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           {valuePillars.map((pillar, idx) => (
-            <div key={idx} className="p-4 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 shadow-sm text-center flex flex-col items-center">
-              <span className="text-2xl mb-2">{pillar.icon}</span>
+            <div key={idx} className="relative overflow-hidden p-4 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 shadow-sm text-center flex flex-col items-center">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 via-emerald-400 to-violet-500" />
+              <span className="text-2xl mb-2 mt-1">{pillar.icon}</span>
               <h4 className="text-xs font-extrabold text-slate-900 dark:text-white uppercase tracking-wider mb-1">{pillar.title}</h4>
               <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-tight">{pillar.desc}</p>
             </div>
@@ -111,8 +112,9 @@ const TechStack = () => {
           {filteredTech.map((tech, index) => (
             <div
               key={index}
-              className="group p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800/80 backdrop-blur-xl hover:border-cyan-500/50 hover:shadow-lg transition-all duration-200 flex items-center gap-4"
+              className="group relative overflow-hidden p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800/80 backdrop-blur-xl hover:border-cyan-500/50 hover:shadow-lg transition-all duration-200 flex items-center gap-4"
             >
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 via-emerald-400 to-violet-500 opacity-60 group-hover:opacity-100 transition-opacity" />
               <div className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 transition-transform">
                 {tech.icon}
               </div>

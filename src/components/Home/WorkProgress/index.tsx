@@ -27,8 +27,8 @@ const Progresswork = ({ isColorMode }: { isColorMode: Boolean }) => {
           <span className='inline-block px-4 py-1.5 rounded-full text-xs font-mono font-bold tracking-widest text-purple-500 dark:text-purple-400 bg-purple-500/10 border border-purple-500/30 uppercase'>
             {t.workProgressTag}
           </span>
-          <h2 className='text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight' data-aos='fade-up' data-aos-duration='800'>
-            {t.workProgressTitle}
+          <h2 className='text-3xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight' data-aos='fade-up' data-aos-duration='800'>
+            How We Deliver <span className='bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 via-emerald-400 to-blue-500'>Impact</span>
           </h2>
           <p className='text-slate-600 dark:text-slate-400 text-base md:text-lg max-w-2xl mx-auto'>
             {t.workProgressDesc}
@@ -59,9 +59,9 @@ const Progresswork = ({ isColorMode }: { isColorMode: Boolean }) => {
                 transition-all duration-300 ease-out`}>
 
               {/* Top gradient accent bar */}
-              <div className={`absolute top-0 left-0 right-0 h-[3px]
-                bg-gradient-to-r ${step.from} ${step.to}
-                opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+              <div className={`absolute top-0 left-0 right-0 h-[4px]
+                bg-gradient-to-r from-cyan-500 via-emerald-400 to-violet-500
+                opacity-90 group-hover:opacity-100 transition-opacity duration-300`} />
 
               {/* Corner glow blob */}
               <div className={`absolute -top-6 -right-6 w-24 h-24 rounded-full

@@ -36,3 +36,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# lock files (regenerated on install)
+package-lock.json
+
+# vercel deployment config (may contain project-specific IDs)
+vercel.json
+
+# backup folder
+git changes/
